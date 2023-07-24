@@ -6,7 +6,7 @@ public class PartTwo {
     public static void main(String[] args) {
         Scanner sn=new Scanner(System.in);
 
-        PrimesBetween(sn);
+        System.out.println(fibonacci(10));
 
         sn.close();
     }
@@ -68,8 +68,19 @@ public class PartTwo {
     }
 
 
-    static void CharCount(Scanner sn)
+    static long pow(int a,int b)
     {
-        Map<Character,Integer> map=new java.util.HashMap<>();
+        if(b==1)
+            return a;
+        
+        return a*pow(a, --b);
+    }
+
+    static int fibonacci(int n)
+    {
+        if(n==1 || n==2)
+            return 1;
+        
+        return fibonacci(n-1)+fibonacci(n-2);
     }
 }

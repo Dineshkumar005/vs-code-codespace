@@ -8,7 +8,7 @@ public class PartOne {
     
         
 
-        System.out.println();
+        MaxLenghtWords(sn);
         sn.close();
     }
 
@@ -109,5 +109,19 @@ public class PartOne {
             System.out.println("Not Palindrome");
 
 
+    }
+
+    public static void MaxLenghtWords(Scanner sn)
+    {
+        String str[]=sn.nextLine().split(" ");
+        int maxLength=0;
+        for (String string : str) {
+            if(string.length()>maxLength)
+                maxLength=string.length();
+        }
+        for (String string : str) {
+            if(string.length()==maxLength)
+                System.out.println(string);
+        }
     }
 }
