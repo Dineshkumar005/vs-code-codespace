@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class Spiral {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sn = new Scanner(System.in);
         System.out.print("Enter the size of the square matrix: ");
 
-        int n = input.nextInt();
+        int n = sn.nextInt();
         Random random = new Random();
         int[] arr = new int[n * n];
 
@@ -18,22 +18,22 @@ public class Spiral {
 
         Arrays.sort(arr);
         int[][] spiral = new int[n][n];
-        int value = 0;
+        int count = 0;
         int minRow = 0, maxRow = n - 1, minCol = 0, maxCol = n - 1;
 
         try {
-            while (value < n * n) {
+            while (count < n * n) {
                 for (int i = minCol; i <= maxCol; i++)
-                    spiral[minRow][i] = arr[value++];
+                    spiral[minRow][i] = arr[count++];
 
                 for (int i = minRow + 1; i <= maxRow; i++)
-                    spiral[i][maxCol] = arr[value++];
+                    spiral[i][maxCol] = arr[count++];
 
                 for (int i = maxCol - 1; i >= minCol; i--)
-                    spiral[maxRow][i] = arr[value++];
+                    spiral[maxRow][i] = arr[count++];
 
                 for (int i = maxRow - 1; i >= minRow + 1; i--)
-                    spiral[i][minCol] = arr[value++];
+                    spiral[i][minCol] = arr[count++];
 
                 minRow++;
                 maxRow--;
@@ -47,10 +47,10 @@ public class Spiral {
                 System.out.println();
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(value + " " + arr.length);
+            System.out.println(count + " " + arr.length);
         }
         finally{
-            System.out.println(value + " " + arr.length);
+            System.out.println(count + " " + arr.length);
         }
     }
 }
