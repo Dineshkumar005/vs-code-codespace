@@ -2,11 +2,11 @@ package Java;
 
 public class CP {
     public static void main(String[] args) {
-        int i=12,
+    
     }
 
    
-    private static void printCombinationsHelper(String prefix, String suffix) {
+    public static void printCombinationsHelper(String prefix, String suffix) {
         if (suffix.length() == 0) {
             System.out.println(prefix);
         } else {
